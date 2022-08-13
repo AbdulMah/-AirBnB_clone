@@ -5,7 +5,6 @@
 import unittest
 from models.amenity import Amenity
 
-
 class TestAmenity(unittest.TestCase):
     """
     this class test Amenity class and your behavior

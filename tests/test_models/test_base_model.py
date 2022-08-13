@@ -91,17 +91,16 @@ class TestBaseModel_to_dict(unittest.TestCase):
             self.assertIn('__class__', base_dict)
 
         def test_dict_sample(self):
-            new_date = datetime.today()
-            mod = BaseModel()
-            mod.id = '00'
-            mod.created_at = mod.updated_at = new_date
-            dict = {
-                'id': '00',
-                '__class__': 'BaseModel',
-                'created_at': new_date.isoformat(),
-                'updated_at': new_date.isoformat()
-            }
-            self.assertDictEqual(mod.to_dict(), dict)
+            base_dict = self.base.to_dict()
+            self.assertEqual(dict, type(base_dict))
+            self.assertEqual(self.base.id, base_dict["id"])
+            self.assertEqual("BaseModel", base_dict["__class__"])
+            self.assertEqual(self.base.created_at.isoformat(),
+                            base_dict["created_at"])
+            self.assertEqual(self.base.updated_at.isoformat(),
+                            base_dict["updated_at"])
+            self.assertEqual(base_dict.get("_sa_instance_state", None), None)
+
 
 
 if __name__ == "__main__":

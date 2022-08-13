@@ -59,6 +59,7 @@ article>h2 {
     background-position: center top;
     line-height: 9em;
     text-align: center;
+    flex: 0% 0% ;
 }
 
 .max_guest {
@@ -133,6 +134,42 @@ article>h2 {
     padding-bottom: 5%;
     margin-top: 0px;
 }
+
+
+@media only screen and (max-width: 1030px) 
+{
+    .places h1 {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 381px) 
+{
+    .information {
+      height: 20%;
+      padding-top: 5%;
+    }
+    .price_by_night {
+        position: static;
+        width: 20%;
+        min-width: 65px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 5% auto;
+
+    }
+}
+@media only screen and (max-width: 281px) 
+{
+    .information {
+      height: 23%;
+    }
+    .reviews {
+        margin-bottom: 100%;
+    }
+}
+
+
+
 
 /*
 justify-content
